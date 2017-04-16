@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -132,15 +133,15 @@ USE_TZ = True
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 
-PROJECT_ROOT= os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static-only",)
-MEDIA_ROOT = os.path.join(BASE_DIR, 'homepage/static', 'media',)
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_URL="/static/"
-MEDIA_URL="/media/"
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
 
-STATICFILES_DIRS =[
-    os.path.join(BASE_DIR, "homepage/static"),
-]
-
-STATICFILES_STORAGE='whitenoise.django.ZgipManifestStaticFilesStorage'
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'homepage/static'),
+)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

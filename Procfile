@@ -1,1 +1,1 @@
-web: sh -c "cd blogsite && gunicorn.blogsite.wsgi"
+web: gunicorn blogsite.wsgi --log-file -
