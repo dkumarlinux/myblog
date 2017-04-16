@@ -1,0 +1,66 @@
+{% extends "homepage/index.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+
+<!--Here is a loop to itrate value from database!-->
+{% block content %}
+
+<ul class="cd-hero-slider">  <!-- autoplay -->
+    <li class="selected">
+        <div class="cd-full-width">
+            <div class="container-fluid js-tm-page-content tm-page-1" data-page-no="1">
+                
+                <div class="row">
+                
+                    <div class="col-xs-12" style="margin-top: -100px;">
+                        
+                                                
+                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-1-col">
+                        {% for e in page.object_list %}
+                        <h1 ><a href="{{ e.get_absolute_url }}" >{{ e.title }}</a></h1>
+                        <img style="width:50%; height: auto;" src="/media/{{ e.image }}"/>
+                        <!--This is for like button and Comments!-->
+                        
+                        <pre><div id="post_like" class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                        {{ e.text|linebreaks|truncatechars:70 }}</pre>
+                        
+                        <!--This is for lmore button and Comments!-->
+                         <p><a href="{{ e.get_absolute_url }}" class="btn btn-primary" role="button">View more</a></p><hr>
+                        {% endfor %}   
+                
+				
+               
+<table  style="margin-left: 400px;">
+{% if page.has_previous %}
+<th>                       
+<a  href="?page={{ page_request_var }}={{ page.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" /> <<-Prev</a></th>
+{% endif %}
+
+<th>|{{ page.number }}|</th> 
+{% if page.has_next %}
+<th>
+<a href="?page{{ page_request_var }}={{ page.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }} {% endif %}" />Next->></a>
+{% endif %}
+</th>
+</table>
+		 </div>
+
+ 			</div>
+ 		</div>
+
+	</div>
+</div> 
+                           <!--pagination!-->
+
+</li>
+
+
+<!--Blog's Post page or Home page ends!-->
+
+{% include "homepage/footer.html" %}
+
+{% endblock %}
+

@@ -1,0 +1,86 @@
+{% extends "homepage/index.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- Navigation -->        
+<div class="cd-hero">
+
+<ul class="cd-hero-slider">  <!-- autoplay -->
+<li class="selected">
+<div class="cd-full-width">            
+
+        <div class="container-fluid js-tm-page-content" data-page-no="5">
+            
+            <div class="tm-contact-page">
+                
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        
+                        <h2 class="tm-section-title">Contact Us</h2>
+
+						{% if confirm_message %}
+						
+            			<p class="tm-text tm-font-w-400 m-b-3">{{ confirm_message }}</p> 
+
+						{% endif%}
+                       
+                    </div>
+
+                </div>
+
+                <!-- contact form -->
+                <div class="row">
+                	{% if form %}
+                    <form action="" method="post" >{% csrf_token %}
+                    
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="form-group">
+                            <div class="col-xs-12">
+                            	{{ form|crispy }}
+                            <input type='submit' value='submit form' class='btn btn-default' />
+							<input type='reset' value='reset' class='btn btn-default' />
+                        </div>
+                    </form> 
+                    {% endif %} 
+                </div>
+
+            </div>    
+
+        </div>
+        
+    </div> <!-- .cd-full-width -->
+    </li></ul>
+{% include "homepage/footer.html" %}
+    </div>
+
+{% endblock %}
+ 
+<!-- .cd-hero-slider -->
+            
+
+<!--{% load crispy_forms_tags %}
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3'>
+<h1> Contact -Us </h1>
+
+{% if confirm_message %}
+<p>{{ confirm_message }}</p>
+{% endif%}
+
+{% if form %}
+<form method='POST' action=""> {% csrf_token %}
+{{ form|crispy }}
+<input type='submit' value='submit form' class='btn btn-default' />
+<input type='reset' value='reset' class='btn btn-default' />
+</form>
+{% endif %}
+</div>
+
+</div>!-->
+
