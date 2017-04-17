@@ -19,6 +19,9 @@ Home
                         
                                                 
                         <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-1-col">
+                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-1-col sm-col-2 sm-col-offset2">
+
+                        <p>qwqdqw</p>
                         {% for e in page.object_list %}
                         <h1 ><a href="{{ e.get_absolute_url }}" >{{ e.title }}</a></h1>
                         <img style="width:50%; height: auto;" src="/media/{{ e.image }}"/>
@@ -30,7 +33,7 @@ Home
                         <!--This is for lmore button and Comments!-->
                          <p><a href="{{ e.get_absolute_url }}" class="btn btn-primary" role="button">View more</a></p><hr>
                         {% endfor %}   
-                
+
 				
                
 <table  style="margin-left: 400px;">
@@ -54,7 +57,7 @@ Home
 	</div>
 </div> 
                            <!--pagination!-->
-
+</div>
 </li>
 
 

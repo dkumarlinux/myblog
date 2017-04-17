@@ -131,16 +131,32 @@ USE_TZ = True
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'homepage/static', 'media',)
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'homepage/static'),
 )
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+#STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
+#if DEBUG:
+#    MEDIA_URL = '/media/'
+#    STATIC_URL = '/static/'
+
+#    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static-only",)
+    
+#    MEDIA_ROOT = os.path.join(BASE_DIR, 'homepage/static', 'media',)
+
+#    STATICFILES_DIRS =[
+#		os.path.join(BASE_DIR, "homepage/static"),
+
+#	]
