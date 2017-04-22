@@ -1,6 +1,6 @@
 {% extends "homepage/base.html" %}
 {% block navi %}
-<h1>blogconfigure</h1>
+<h1>myblog</h1>
  <!-- Content -->
 <!-- Content -->
         <div class="cd-hero">
@@ -33,11 +33,10 @@
                     <a class="nav-link" href="{% url 'feed' %}" data-no="6">Rss</a>
                 </li>
                 
-            </ul>
             
-                	<div >
+               	<div >
 					<form action="{% url 'index' %}" method="get" >
-						<input style="border-radius:80px; margin-left: 400px;" name="q" type="text" placeholder="Search somthing..."  \>
+						<input  style="border-radius:80px; margin-left:300 auto; margin-top: 25px;" name="q" type="text" placeholder="Search somthing..." \>
 						<input style="border-radius:80px;" type="submit" value="Search" \>
 					</form>
 					</div>
@@ -46,7 +45,7 @@
     </nav>
 </div> 
 </div>
-
+</ul>
 {% endblock %}
 
 <!--here footer starts!-->

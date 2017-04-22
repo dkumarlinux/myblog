@@ -18,8 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
-EMAIL_HOST_USER='dkumarlinux@gmail.com'
-EMAIL_HOST_PASSWORD='divya_$%@321'
+EMAIL_HOST_USER='sd'
+EMAIL_HOST_PASSWORD='asdasdasdas'
 EMAIL_PORT= 587
 EMAIL_USE_TLS=True
 
@@ -32,7 +32,7 @@ SECRET_KEY = '8j+%*_9+%+ird3!q)*&1v7)b5!0_3wl&!=dd2lg=3lw!88&ja1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','.herokuapp.com']
 
 
 # Application definition

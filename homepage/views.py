@@ -21,7 +21,7 @@ def index(request):
 			Q(text__icontains=query)
 			).distinct()
 
-	paginator = Paginator(entries, 10)
+	paginator = Paginator(entries, 5)
 	page_num = request.GET.get('page',1)
 	try:
 		page = paginator.page(page_num)
@@ -29,7 +29,6 @@ def index(request):
 		page = paginator.page(paginator.num_pages)
 	except PageNotAnInteger:
 		page = paginator.page(1)
-
 
 	context = {
 		'page':page
